@@ -1,37 +1,15 @@
-## Welcome to GitHub Pages
+## Welcome to JohnWeston's Blog
 
-You can use the [editor on GitHub](https://github.com/JohnWestonNull/JohnWestonNull.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+你好，欢迎来到我的博客，这里主要记录一些我在 CS/MA 方向阅读的一些资料的总结。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+下面是内容列表
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/JohnWestonNull/JohnWestonNull.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- Operating System
+  - [Memory Addressing](./os/mem_addr)
+- Trusted Execution Environment
+  - To Be Updated
+- Compilers
+  - To Be Updated
+- Nonlinear Schrodinger Equation
+  - Time-Splitting Method
+  - Exponential Time Method
