@@ -1,3 +1,6 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 # 基础知识——三种内存地址
 
 在操作系统中，代表内存的方式分为 3 种，逻辑地址，虚拟地址和物理地址。

@@ -10,6 +10,8 @@
   - To Be Updated
 - Compilers
   - To Be Updated
+- RISC-V
+  - [Toolchain Installation](./riscv/toolchain)
 - Nonlinear Schrodinger Equation
   - Time-Splitting Method
   - Exponential Time Method
