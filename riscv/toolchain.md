@@ -2,6 +2,12 @@
 
 本文主要关注 RISC-V 工具链的搭建以及相应的 QEMU Linux 虚拟机的配置启动上。
 
+## 本文中所用的仓库压缩包
+
+链接：https://pan.baidu.com/s/1u_w6qAWxj8wBXI7aWVIiag 
+提取码：knau 
+压缩包内三个文件夹分别对应工具链，QEMU 和 BusyBear，内部子仓库以及相应配置均已修改好，直接 make 即可。
+
 ## Part I: RISC-V 工具链获取 & 安装
 
 #### 拉取代码
