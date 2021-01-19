@@ -70,6 +70,7 @@ QEMU 安装比较简单，直接执行下面命令即可，我同样附了安装
 ```bash
 git clone https://github.com/riscv/riscv-qemu.git
 cd riscv-qemu
+git checkout v5.0.0
 ./configure --target-list=riscv64-softmmu,riscv32-softmmu
 make
 ```
