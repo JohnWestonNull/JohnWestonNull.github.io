@@ -12,6 +12,8 @@
   - To Be Updated
 - RISC-V
   - [Toolchain Installation](./riscv/toolchain)
+- Raft & KV
+  - [Raft Leader Election](./raft/leader_election)
 - Nonlinear Schrodinger Equation
   - Time-Splitting Method
   - Exponential Time Method
