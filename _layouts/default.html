@@ -33,6 +33,7 @@
     <section id="main_content">
       {{ content }}
     </section>
+    <div id="gitalk-container"></div>
   </div>
 
   {% if site.google_analytics %}
@@ -47,19 +48,18 @@
     ga('send', 'pageview');
   </script>
   {% endif %}
-  <div id="gitmentContainer"></div>
-  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>
-    var gitment = new Gitment({
+    const gitalk = new Gitalk({
+      clientID: 'ce013ac19f78db2f3552',
+      clientSecret: ' e722012597027ce6d97888f275a3edf6429365e4',
+      repo: 'JohnWestonNull.github.io',      // The repository of store comments,
       owner: 'JohnWestonNull',
-      repo: 'JohnWestonNull.github.io',
-      oauth: {
-        client_id: ' ce013ac19f78db2f3552 ',
-        client_secret: '4502bfdb44871799c83e32f2380bb385fc9df1c5',
-      },
-    });
-    gitment.render('gitmentContainer');
+      admin: ['JohnWestonNull'],
+      id: location.pathname,      // Ensure uniqueness and length less than 50
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+
+    gitalk.render('gitalk-container')
   </script>
 
 </body>
