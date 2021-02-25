@@ -2,7 +2,7 @@ theme: jekyll-theme-hacker
 google_analytics: UA-190454037-1
 markdown: kramdown
 kramdown:
-    math_engine: mathjax
+    math_engine: katex
 defaults:
   -
     scope:
