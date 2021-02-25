@@ -26,11 +26,13 @@ u'=cu+F(u,t)
 
 对两侧乘以积分因子 $e^{-ct}$，我们有
 \$\$
-\begin{align}
-u'e^{-ct}-ce^{-ct}&=e^{-ct}F(u,t)\\\\
-(ue^{-ct})'&=e^{-ct}F(u,t)\\\\
-u(t_{n+1})&=e^{ch}u(t_n)+e^{ch}\int_0^h e^{-c\tau}F(u(t_n+\tau),t_n+\tau)\text{d}\tau
-\end{align}
+u'e^{-ct}-ce^{-ct}=e^{-ct}F(u,t)
+\$\$
+\$\$
+(ue^{-ct})'=e^{-ct}F(u,t
+\$\$
+\$\$
+u(t_{n+1})=e^{ch}u(t_n)+e^{ch}\int_0^h e^{-c\tau}F(u(t_n+\tau),t_n+\tau)\text{d}\tau
 \$\$
 注意到上式是精确的，因此重点只在于右侧的非线性部分的积分近似。
 ## 最基础的格式——ETD1
