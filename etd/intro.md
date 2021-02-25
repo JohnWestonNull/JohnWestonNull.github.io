@@ -33,4 +33,65 @@ u(t_{n+1})&=e^{ch}u(t_n)+e^{ch}\int_0^h e^{-c\tau}F(u(t_n+\tau),t_n+\tau)\text{d
 \end{align}
 \$\$
 注意到上式是精确的，因此重点只在于右侧的非线性部分的积分近似。
+## 最基础的格式——ETD1
+假设我们采用最基础的近似方式，将 $F$ 在节点间的值看成常数，$F=F_n+O(h),t\in[t_n,t_{n+1}]$。
+\$\$
+u_{n+1}=u(t_n)e^{ch}+F_n\frac{e^{ch}-1}{c}
+\$\$
+其他格式例如 ETD2，ETDRK4 等，都是对非线性部分采用不同的数值积分方法进行处理。
 
+## 极限形式处理——Limiting Form
+注意到，在进行 ETD 数值格式计算时，会出现谱空间内求导算子 $\mathcal{L}=0$ 的情况。这直接导致在右侧的非线性部分中出现分子为 $0$。对于这个问题，我们利用洛必达法则，对分式上下同时求导，得到极限形式。
+\$\$
+\begin{align}
+\lim_{c\to0}\frac{e^{ch}-1}{c}=h
+\end{align}
+\$\$
+当然对于不同的 ETD 格式我们会推导出不同的极限形式，后面我们会讨论相关的处理。
+
+## MATLAB 代码
+```matlab
+N = 1024;
+dt = 0.001;
+t_max = 10;
+step_max = round(t_max/dt);
+
+output_perd = 10;
+L = 50;
+h = L/N;
+n = (-N/2:1:N/2-1)';
+x = n * h;
+u = exp(1i*x).*sech(x);
+k = 2*n*pi/L;
+
+M = moviein(step_max/output_perd);
+c = -1i*k.*k/2;
+
+for s = 1:step_max
+    
+    u_mode = fftshift(fft(u));
+    uN_mode = fftshift(fft(abs(u.*u).*u));
+    expch = exp(dt*c);
+    
+    ulim = u_mode(513) + dt * 1i .* uN_mode(513);
+    u_mode = expch .* u_mode + 1i*uN_mode.*(expch-1)./c;
+    u_mode(513) = ulim;
+    u = ifft(ifftshift(u_mode));
+    
+    energy = sum(abs(u).^2);
+    mass = sum(abs(u));
+    fprintf("Energy: %.2f\nMass: %.2f\n", energy, mass);
+        
+    if rem(s, output_perd) == 0
+        frame_idx = s / output_perd;
+        plot3(x, real(u), imag(u));
+        view(0, 90);
+        M(frame_idx) = getframe;
+    end
+end
+video=VideoWriter('ETD1.avi');
+open(video);
+video.writeVideo(M);
+close(video);
+fprintf("Done")
+```
