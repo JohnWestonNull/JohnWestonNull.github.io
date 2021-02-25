@@ -3,13 +3,14 @@ google_analytics: UA-190454037-1
 markdown: kramdown
 kramdown:
     math_engine: katex
-mathjax: true
+
 defaults:
   -
     scope:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
+      mathjax: true
 
 url: "https://johnwestonnull.github.io" # the base hostname & protocol for your site
 plugins:
