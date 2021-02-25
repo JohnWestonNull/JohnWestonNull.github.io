@@ -27,8 +27,8 @@ u'=cu+F(u,t)
 对两侧乘以积分因子 $e^{-ct}$，我们有
 \$\$
 \begin{align}
-u'e^{-ct}-ce^{-ct}&=e^{-ct}F(u,t)\\
-(ue^{-ct})'&=e^{-ct}F(u,t)\\
+u'e^{-ct}-ce^{-ct}&=e^{-ct}F(u,t)\\\
+(ue^{-ct})'&=e^{-ct}F(u,t)\\\
 u(t_{n+1})&=e^{ch}u(t_n)+e^{ch}\int_0^h e^{-c\tau}F(u(t_n+\tau),t_n+\tau)\text{d}\tau
 \end{align}
 \$\$
@@ -43,9 +43,7 @@ u_{n+1}=u(t_n)e^{ch}+F_n\frac{e^{ch}-1}{c}
 ## 极限形式处理——Limiting Form
 注意到，在进行 ETD 数值格式计算时，会出现谱空间内求导算子 $\mathcal{L}=0$ 的情况。这直接导致在右侧的非线性部分中出现分子为 $0$。对于这个问题，我们利用洛必达法则，对分式上下同时求导，得到极限形式。
 \$\$
-\begin{align}
 \lim_{c\to0}\frac{e^{ch}-1}{c}=h
-\end{align}
 \$\$
 当然对于不同的 ETD 格式我们会推导出不同的极限形式，后面我们会讨论相关的处理。
 
