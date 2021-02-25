@@ -4,16 +4,17 @@
 
 下面是内容列表
 
-- Operating System
-  - [Memory Addressing](./os/mem_addr)
-- Trusted Execution Environment
+- 操作系统 Operating System
+  - [内存寻址 Memory Addressing](./os/mem_addr)
+- 可信执行环境 Trusted Execution Environment
   - To Be Updated
-- Compilers
+- 编译器 Compilers
   - To Be Updated
 - RISC-V
-  - [Toolchain Installation](./riscv/toolchain)
-- Raft & KV
-  - [Raft Leader Election](./raft/leader_election)
-- Nonlinear Schrodinger Equation
+  - [工具链安装 Toolchain Installation](./riscv/toolchain)
+- 分布式存储 Raft & KV
+  - [领导者选举 Raft Leader Election](./raft/leader_election)
+- 非线性薛定谔方程 Nonlinear Schrodinger Equation
   - Time-Splitting Method
   - Exponential Time Method
+    - [介绍 Intro](./etd/intro)
