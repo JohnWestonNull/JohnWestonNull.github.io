@@ -7,9 +7,9 @@
 #### Example
 
 考虑方程
-\$$
+\$\$
 i\frac{\partial u}{\partial t}=-\frac{1}{2}\frac{\partial^2 u}{\partial x^2}-|u|^2u
-$$
+\$\$
 进行傅立叶变换，$\hat{u}(n)=\int_{-\infty}^{\infty}u(x)e^{-2\pi ikx}\text{d}x$，对上面的方程而言，我们如果只考虑线性部分，线性部分变成了一个单纯的标量乘法。
 $$
 \frac{\partial \hat{u}}{\partial t}=-i\frac{k^2}{2}
