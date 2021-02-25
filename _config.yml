@@ -1,8 +1,5 @@
 theme: jekyll-theme-hacker
 google_analytics: UA-190454037-1
-markdown: kramdown
-kramdown:
-    math_engine: katex
 
 defaults:
   -
