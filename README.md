@@ -16,5 +16,6 @@
   - [领导者选举 Raft Leader Election](./raft/leader_election)
 - 非线性薛定谔方程 Nonlinear Schrodinger Equation
   - Time-Splitting Method
+    - [介绍 Intro](./time_splitting/intro)
   - Exponential Time Method
     - [介绍 Intro](./etd/intro)
