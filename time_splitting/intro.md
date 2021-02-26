@@ -59,3 +59,39 @@ u(x,\tau+\Delta t)=\mathcal{F}^{-1}(\exp(-k^2\Delta t)\mathcal{F}(\exp(\Delta t\
     \frac{\mathcal{L}^2+\mathcal{N}^2+2\mathcal{LN}}{2}
 \$\$
 当 $\mathcal{L}$ 和 $\mathcal{N}$ 可以交换时（commute），误差为 $0$，但一般这种情况不会出现，因此一般都会引入一个二阶分解误差。
+## MATLAB 程序（含傅立叶变换）
+```matlab
+N = 1024;
+dt = 0.001;
+t_max = 10;
+step_max = round(t_max/dt);
+
+output_perd = 10;
+L = 50;
+h = L/N;
+n = (-N/2:1:N/2-1)';
+x = n * h;
+u = exp(1i*x).*sech(x);
+k = 2*n*pi/L;
+
+M = moviein(step_max/output_perd);
+
+for s = 1:step_max
+    energy = sum(abs(u).^2);
+    mass = sum(abs(u));
+    fprintf("Energy: %.2f\nMass: %.2f\n", energy, mass);
+    u = exp(dt/2*1i*(abs(u.*u))).*u;
+    v = fftshift(fft(u));
+    v = exp(-dt*1i*k.*k/2).*v;
+    u = ifft(fftshift(v));
+    u = exp(dt/2*1i*(abs(u.*u))).*u;
+    if rem(s, output_perd) == 0
+        frame_idx = s / output_perd;
+        plot(x, real(u));
+        M(frame_idx) = getframe;
+    end
+end
+video=VideoWriter('S3FM.avi');
+open(video);
+video.writeVideo(M);
+```
