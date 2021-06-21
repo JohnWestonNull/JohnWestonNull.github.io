@@ -1,0 +1,55 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+Candidate 职责	raft/leader_election.md	/^### Candidate 职责$/;"	S
+Example	etd/intro.md	/^#### Example$/;"	t
+Exponential Time Differencing	etd/intro.md	/^## Exponential Time Differencing$/;"	s
+Follower 职责	raft/leader_election.md	/^### Follower 职责$/;"	S
+Intel x86 架构下的内存寻址	os/mem_addr.md	/^## Intel x86 架构下的内存寻址$/;"	s
+Leader 职责	raft/leader_election.md	/^### Leader 职责$/;"	S
+MATLAB 代码	etd/intro.md	/^## MATLAB 代码$/;"	s
+MATLAB 程序（含傅立叶变换）	time_splitting/intro.md	/^## MATLAB 程序（含傅立叶变换）$/;"	s
+Part I: DWARF 信息与 rvbt 介绍	riscv/rvbt.md	/^## Part I: DWARF 信息与 rvbt 介绍$/;"	s
+Part I: RISC-V 工具链获取 & 安装	riscv/toolchain.md	/^## Part I: RISC-V 工具链获取 & 安装$/;"	s
+Part II: DWARF 运行时加载	riscv/rvbt.md	/^## Part II: DWARF 运行时加载$/;"	s
+Part II: QEMU 虚拟机安装	riscv/toolchain.md	/^## Part II: QEMU 虚拟机安装$/;"	s
+Part III: BusyBear 完整 Linux 虚拟环境	riscv/toolchain.md	/^## Part III: BusyBear 完整 Linux 虚拟环境$/;"	s
+RISC-V 工具链 & QEMU 虚拟机	riscv/toolchain.md	/^# RISC-V 工具链 & QEMU 虚拟机$/;"	c
+RISC-V 架构下的内存寻址	os/mem_addr.md	/^## RISC-V 架构下的内存寻址$/;"	s
+RPC —— 发出心跳包 broadcastAppendEntries	raft/leader_election.md	/^### RPC —— 发出心跳包 broadcastAppendEntries$/;"	S
+RPC —— 发起投票请求 broadcastRequestVote	raft/leader_election.md	/^### RPC —— 发起投票请求 broadcastRequestVote$/;"	S
+RPC —— 处理心跳包 AppendEntries	raft/leader_election.md	/^### RPC —— 处理心跳包 AppendEntries$/;"	S
+RPC —— 处理投票请求 RequestVote	raft/leader_election.md	/^### RPC —— 处理投票请求 RequestVote$/;"	S
+RPC 处理通则	raft/leader_election.md	/^### RPC 处理通则$/;"	S
+Raft 第一部分——领导者选举	raft/leader_election.md	/^## Raft 第一部分——领导者选举$/;"	s
+Time Splitting Method	time_splitting/intro.md	/^## Time Splitting Method$/;"	s
+Welcome to JohnWeston's Blog	README.md	/^## Welcome to JohnWeston's Blog$/;"	s
+a-title	_layouts/default.html	/^      <a id="a-title" href="{{ '\/' | relative_url }}">$/;"	I
+downloads	_layouts/default.html	/^      <section id="downloads">$/;"	I
+gitalk-container	_layouts/default.html	/^    <div id="gitalk-container"><\/div>$/;"	I
+main_content	_layouts/default.html	/^    <section id="main_content">$/;"	I
+rvbt: RISC-V 裸金属环境下的 Backtrace 与 Debug 辅助工具	riscv/rvbt.md	/^# rvbt: RISC-V 裸金属环境下的 Backtrace 与 Debug 辅助工具$/;"	c
+{{ site.description | default: site.github.project_tagline }}	_layouts/default.html	/^      <h2>{{ site.description | default: site.github.project_tagline }}<\/h2>$/;"	i
+{{ site.title | default: site.github.repository_name }}	_layouts/default.html	/^        <h1>{{ site.title | default: site.github.repository_name }}<\/h1>$/;"	h
+为什么我们需要内存寻址？	os/mem_addr.md	/^## 为什么我们需要内存寻址？$/;"	s
+修改内核版本	riscv/toolchain.md	/^### 修改内核版本$/;"	S
+分解误差	time_splitting/intro.md	/^## 分解误差$/;"	s
+分页	os/mem_addr.md	/^### 分页$/;"	S
+前置需求安装	riscv/toolchain.md	/^### 前置需求安装$/;"	S
+基础知识——三种内存地址	os/mem_addr.md	/^## 基础知识——三种内存地址$/;"	s
+完整实现	raft/leader_election.md	/^### 完整实现$/;"	S
+拉取仓库	riscv/toolchain.md	/^### 拉取仓库$/;"	S
+拉取代码	riscv/toolchain.md	/^### 拉取代码$/;"	S
+最基础的格式——ETD1	etd/intro.md	/^## 最基础的格式——ETD1$/;"	s
+本文中所用的仓库压缩包	riscv/toolchain.md	/^## 本文中所用的仓库压缩包$/;"	s
+极限形式处理——Limiting Form	etd/intro.md	/^## 极限形式处理——Limiting Form$/;"	s
+线性部分处理	time_splitting/intro.md	/^## 线性部分处理$/;"	s
+编译 & 安装	riscv/toolchain.md	/^### 编译 & 安装$/;"	S
+编译执行	riscv/toolchain.md	/^### 编译执行$/;"	S
+虚拟地址到物理地址的转换——页表	os/mem_addr.md	/^## 虚拟地址到物理地址的转换——页表$/;"	s
+解决手段——将线性部分精确处理	etd/intro.md	/^## 解决手段——将线性部分精确处理$/;"	s
+非线性部分处理	time_splitting/intro.md	/^## 非线性部分处理$/;"	s
