@@ -49,3 +49,42 @@ extern "C" {
 在链接阶段，你会收到下面的错误信息：
 
 > xxx relocation at 0xdeadbeef for symbol `__my_debug_abbrev_start` out of range
+
+这是因为在编译阶段，类似于 `auipc` 等基于当前 `pc` 寄存器寻址的命令的操作数都会为 0, 在链接阶段再由链接器填入。
+而 `extern "C"` 引用的符号正是以此机制链入的，而上面的 DWARF 段距离 `pc` 的距离过远，该寻址手段最多只支持 `+-2M` 范围内的寻址。
+而调试信息由于运行时不需要，通常都会被编译器放置在较远的位置，因此当链接器发现需要链接的符号过远而无法链接时就会报上面的错误。
+
+**解决方案: 将调试信息复制一份置入自定义段，让自定义段距离 `.rodata` 段足够近即可。**
+
+遗憾的是，根据下面的描述 [StackOverflow](https://stackoverflow.com/questions/31125217/how-to-make-duplicate-sections-in-elf-file)，链接脚本并不支持**复制**这种操作。
+
+> If a file name matches more than one wildcard pattern, or
+> if a file name appears explicitly and is also matched by a wildcard pattern,
+> the linker will use the first match in the linker script.
+
+链接脚本在任何时候只会根据优先匹配原则将一段放入一块区域中。 但我们可以利用 `objcopy` 来实现对段的操作。
+
+为了完成复制段的操作，我们首先需要在链接脚本中留出足够的空间，可以利用下面的方法。
+
+```linkscript
+  .rvbt_addr : {
+    _rvbt_addr_start = .;
+    . += _debug_addr_end - _debug_addr_start;
+    _rvbt_addr_end = .;
+  }
+```
+
+然后我们先将 `.debug_{section}` 的段全部导出到临时文件中，再重新导入进我们将在运行时读取的段 `.rvbt_{section}`。
+
+```bash
+copy-debug:
+  for sec in 'abbrev' 'addr' 'aranges' 'info' 'line' 'line_str' 'ranges' 'rnglists' 'str' 'str_offsets'; do \
+    # dump needed section
+    rust-objcopy {{PAYLOAD}} --dump-section .debug_$sec=tmp_$sec; \
+    # update
+    riscv64-unknown-elf-objcopy {{PAYLOAD}} --update-section .rvbt_$sec=tmp_$sec; \
+  done
+  rm tmp*; 
+```
+
+这样完成后的 ELF 中就可以直接访问到链接脚本中定义的符号了。
