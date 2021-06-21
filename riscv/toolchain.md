@@ -4,7 +4,7 @@
 
 ## 本文中所用的仓库压缩包
 
-链接：https://pan.baidu.com/s/1u_w6qAWxj8wBXI7aWVIiag 
+链接：()[https://pan.baidu.com/s/1u_w6qAWxj8wBXI7aWVIiag]
 
 提取码：knau
 
@@ -12,7 +12,7 @@
 
 ## Part I: RISC-V 工具链获取 & 安装
 
-#### 拉取代码
+### 拉取代码
 
 首先克隆主仓库
 
@@ -37,7 +37,7 @@ git clone https://github.com/riscv/riscv-binutils-gdb.git # 这里以 riscv-binu
 
 如果你因为国内网络环境导致无法下载，我这里提供了完整的包（不确保更新）
 
-#### 前置需求安装
+### 前置需求安装
 
 如果是 Ubuntu，执行
 
@@ -53,7 +53,7 @@ sudo yum install autoconf automake python3 libmpc-devel mpfr-devel gmp-devel gaw
 
 如果是 Arch 系，我相信你有足够的背景知识安装。
 
-#### 编译 & 安装
+### 编译 & 安装
 
 如果只是单纯需要运行 Linux，只编译 `linux` 编译目标即可，虽然建议两个都编译。
 
@@ -87,13 +87,13 @@ make
 
 但这些工具的准备是十分的 teadious 的，不过有人准备好了一整套的环境，即 `BusyBear`。
 
-#### 拉取仓库
+### 拉取仓库
 
 ```bash
 git clone --recursive https://github.com/michaeljclark/busybear-linux.git
 ```
 
-#### 修改内核版本
+### 修改内核版本
 
 如果你使用的是最新的工具链（例如上面安装的 gcc），那么编译时会出现 `redefined symbol` 的问题，此时需要修改 `BusyBear` 所使用的内核版本，将其从 `v5.0` 改到 `v5.10`
 
@@ -113,7 +113,7 @@ IMAGE_SIZE=100
 ROOT_PASSWORD=busybear
 ```
 
-#### 编译执行
+### 编译执行
 
 ```bash
 cd busybear-linux
