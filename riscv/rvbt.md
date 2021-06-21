@@ -88,3 +88,81 @@ copy-debug:
 ```
 
 这样完成后的 ELF 中就可以直接访问到链接脚本中定义的符号了。
+
+## Part III: 运行时栈帧解析与 DWARF 读取
+
+首先需要启用编译标识 `"-Cforce-frame-pointers=yes"` 强制启用 `fp` 寄存器记录栈帧
+，以防止 `llvm` 优化导致 `fp` 为空。当然这样会导致效率下降，但是调试也不需要太在意这个。
+
+### 堆栈展开函数
+
+```rust
+#[cfg(target_arch="riscv64")]
+const XLEN: u64 = 8;
+#[cfg(target_arch="riscv32")]
+const XLEN: u64 = 4;
+
+#[inline(always)]
+pub fn trace_from(mut curframe: Frame, action: &dyn Fn(&Frame) -> bool) {
+    loop {
+        let keep_going = action(&curframe);
+        if keep_going {
+            unsafe {
+                curframe.ra = *((curframe.fp + XLEN) as *mut u64);
+                curframe.sp = curframe.fp;
+                curframe.fp = *(curframe.fp as *mut u64);
+                if curframe.ra == 0 || curframe.fp == 0 {
+                    break;
+                }
+            }
+        } else {
+            break;
+        }
+    }
+}
+
+#[inline(always)]
+pub fn trace(action: &dyn Fn(&Frame) -> bool) {
+    let (fp, sp, ra): (u64, u64, u64);
+    unsafe {
+        asm!("
+        mv {0}, s0
+        mv {1}, x2
+        mv {2}, x1
+        ", out(reg) fp, out(reg) sp, out(reg) ra);
+    }
+    let curframe = Frame::new(fp, sp, ra);
+    trace_from(curframe, action)
+}
+```
+
+### DWARF 符号读取 (基于 `addr2line` 与 `gimli` 库)
+
+```rust
+#[inline(always)]
+pub fn resolve(addr: u64, action: &dyn Fn(&Symbol)) {
+    if_chain! {
+        if let Some(ctx) = DEBUG_CTX.lock().as_ref();
+        if let Ok(mut frame_iter) = ctx.find_frames(addr);
+        then {
+            while let Ok(Some(frame)) = frame_iter.next() {
+                let name = match frame.function {
+                    Some(func) => {
+                        func.demangle().ok().map_or("".to_string(), |s| s.to_string())
+                    },
+                    None => "".to_string()
+                };
+                let (file, line) = match frame.location {
+                    Some(loc) => {
+                        (loc.file.unwrap_or("??"), loc.line.unwrap_or(0))
+                    },
+                    None => ("??", 0)
+                };
+                action(&Symbol{name, file: file.to_string(), line})
+            }
+        } else {
+            println!("[ERROR] debug context not initialized or frame not found");
+        }
+    }
+}
+```

@@ -6,6 +6,7 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	//
 Candidate 职责	raft/leader_election.md	/^### Candidate 职责$/;"	S
+DWARF 符号读取 (基于 `addr2line` 与 `gimli` 库)	riscv/rvbt.md	/^### DWARF 符号读取 (基于 `addr2line` 与 `gimli` 库)$/;"	S
 Example	etd/intro.md	/^#### Example$/;"	t
 Exponential Time Differencing	etd/intro.md	/^## Exponential Time Differencing$/;"	s
 Follower 职责	raft/leader_election.md	/^### Follower 职责$/;"	S
@@ -18,6 +19,7 @@ Part I: RISC-V 工具链获取 & 安装	riscv/toolchain.md	/^## Part I: RISC-V �
 Part II: DWARF 运行时加载	riscv/rvbt.md	/^## Part II: DWARF 运行时加载$/;"	s
 Part II: QEMU 虚拟机安装	riscv/toolchain.md	/^## Part II: QEMU 虚拟机安装$/;"	s
 Part III: BusyBear 完整 Linux 虚拟环境	riscv/toolchain.md	/^## Part III: BusyBear 完整 Linux 虚拟环境$/;"	s
+Part III: 运行时栈帧解析与 DWARF 读取	riscv/rvbt.md	/^## Part III: 运行时栈帧解析与 DWARF 读取$/;"	s
 RISC-V 工具链 & QEMU 虚拟机	riscv/toolchain.md	/^# RISC-V 工具链 & QEMU 虚拟机$/;"	c
 RISC-V 架构下的内存寻址	os/mem_addr.md	/^## RISC-V 架构下的内存寻址$/;"	s
 RPC —— 发出心跳包 broadcastAppendEntries	raft/leader_election.md	/^### RPC —— 发出心跳包 broadcastAppendEntries$/;"	S
@@ -41,6 +43,7 @@ rvbt: RISC-V 裸金属环境下的 Backtrace 与 Debug 辅助工具	riscv/rvbt.m
 分页	os/mem_addr.md	/^### 分页$/;"	S
 前置需求安装	riscv/toolchain.md	/^### 前置需求安装$/;"	S
 基础知识——三种内存地址	os/mem_addr.md	/^## 基础知识——三种内存地址$/;"	s
+堆栈展开函数	riscv/rvbt.md	/^### 堆栈展开函数$/;"	S
 完整实现	raft/leader_election.md	/^### 完整实现$/;"	S
 拉取仓库	riscv/toolchain.md	/^### 拉取仓库$/;"	S
 拉取代码	riscv/toolchain.md	/^### 拉取代码$/;"	S
