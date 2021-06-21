@@ -4,7 +4,7 @@
 
 ## 本文中所用的仓库压缩包
 
-链接：[](https://pan.baidu.com/s/1u_w6qAWxj8wBXI7aWVIiag)
+链接：https://pan.baidu.com/s/1u_w6qAWxj8wBXI7aWVIiag
 
 提取码：knau
 

@@ -14,9 +14,9 @@ rvbt 正是为该种情况而设计的，运行在 RISC-V Machine Mode 权限级
 
 关于 DWARF 可以参考:
 
-- [](https://hanfeng.ink/post/gdb_debug_info/)
-- [](https://eli.thegreenplace.net/2011/02/07/how-debuggers-work-part-3-debugging-information)
-- [](https://en.wikipedia.org/wiki/DWARF)
+- [调试器工作原理：第三部分 调试信息](https://hanfeng.ink/post/gdb_debug_info/)
+- [How debuggers work: Part 3 - Debugging information](https://eli.thegreenplace.net/2011/02/07/how-debuggers-work-part-3-debugging-information)
+- [Wikipedia/DWARF](https://en.wikipedia.org/wiki/DWARF)
 
 这里我们只需要将 DWARF 信息从原有的 ELF 文件中读取出来，作为我们自己的段插入二进制文件中。
 并在运行时解析它们，在程序出现异常时解析并输出栈帧即可。
