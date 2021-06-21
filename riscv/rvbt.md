@@ -26,6 +26,7 @@ rvbt 正是为该种情况而设计的，运行在 RISC-V Machine Mode 权限级
 尽管调试信息在编译时已经整合进入了二进制文件，但我们如果像下面这样直接在代码中链接对应的符号是无法工作的。
 
 ```linkscript
+/* THIS DOES NOT WORK */
 SECTIONS
 {
   /*...*/
@@ -44,3 +45,7 @@ extern "C" {
   fn __my_debug_abbrev_end();
 }
 ```
+
+在链接阶段，你会收到下面的错误信息：
+
+> xxx relocation at 0xdeadbeef for symbol `__my_debug_abbrev_start` out of range
