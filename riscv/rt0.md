@@ -85,7 +85,7 @@ extern "C" {
 
 全志非常有创意的定制了一块自定义 Header，我也不知道有啥用。 只能原样在 Coffer 中重构了一个一样的以防止出现问题，根据注释是放置设备树等信息的位置。
 
-```C
+```c
 // lichee/brandy-2.0/opensbi/platform/thead/c910/private_opensbi.h
 struct private_opensbi_head {
         unsigned int  jump_instruction; /* jumping to real code */
