@@ -148,9 +148,7 @@ struct SunxiHead {
 #[link_section = ".head_data"]
 static SUNXI_HEAD: SunxiHead = SunxiHead {
     jump_inst: 0x4000_006f, // j 0x4000_0400
-    magic: [
-        'o' as u8, 'p' as u8, 'e' as u8, 'n' as u8, 's' as u8, 'b' as u8, 'i' as u8, 0,
-    ],
+    magic: *b"opensbi",
     dtb_base: 0,
     uboot_base: 0,
     res3: 0,
