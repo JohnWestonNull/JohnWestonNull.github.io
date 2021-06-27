@@ -6,6 +6,8 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	//
 Candidate 职责	raft/leader_election.md	/^### Candidate 职责$/;"	S
+Coffer 移植哪吒 D1 开发板小记	riscv/rt0.md	/^# Coffer 移植哪吒 D1 开发板小记$/;"	c
+D1 SDK OpenSBI 打包位置	riscv/rt0.md	/^## D1 SDK OpenSBI 打包位置$/;"	s
 DWARF 符号读取 (基于 `addr2line` 与 `gimli` 库)	riscv/rvbt.md	/^### DWARF 符号读取 (基于 `addr2line` 与 `gimli` 库)$/;"	S
 Example	etd/intro.md	/^#### Example$/;"	t
 Exponential Time Differencing	etd/intro.md	/^## Exponential Time Differencing$/;"	s
@@ -39,17 +41,21 @@ rvbt: RISC-V 裸金属环境下的 Backtrace 与 Debug 辅助工具	riscv/rvbt.m
 {{ site.title | default: site.github.repository_name }}	_layouts/default.html	/^        <h1>{{ site.title | default: site.github.repository_name }}<\/h1>$/;"	h
 为什么我们需要内存寻址？	os/mem_addr.md	/^## 为什么我们需要内存寻址？$/;"	s
 修改内核版本	riscv/toolchain.md	/^### 修改内核版本$/;"	S
+全志自定义 Header	riscv/rt0.md	/^### 全志自定义 Header$/;"	S
 分解误差	time_splitting/intro.md	/^## 分解误差$/;"	s
 分页	os/mem_addr.md	/^### 分页$/;"	S
 前置需求安装	riscv/toolchain.md	/^### 前置需求安装$/;"	S
 基础知识——三种内存地址	os/mem_addr.md	/^## 基础知识——三种内存地址$/;"	s
 堆栈展开函数	riscv/rvbt.md	/^### 堆栈展开函数$/;"	S
 完整实现	raft/leader_election.md	/^### 完整实现$/;"	S
+寄存器初始化	riscv/rt0.md	/^### 寄存器初始化$/;"	S
+嵌入式程序初始化	riscv/rt0.md	/^## 嵌入式程序初始化$/;"	s
 拉取仓库	riscv/toolchain.md	/^### 拉取仓库$/;"	S
 拉取代码	riscv/toolchain.md	/^### 拉取代码$/;"	S
 最基础的格式——ETD1	etd/intro.md	/^## 最基础的格式——ETD1$/;"	s
 本文中所用的仓库压缩包	riscv/toolchain.md	/^## 本文中所用的仓库压缩包$/;"	s
 极限形式处理——Limiting Form	etd/intro.md	/^## 极限形式处理——Limiting Form$/;"	s
+清空 `.bss` 段和初始化 `.data` 段	riscv/rt0.md	/^### 清空 `.bss` 段和初始化 `.data` 段$/;"	S
 线性部分处理	time_splitting/intro.md	/^## 线性部分处理$/;"	s
 编译 & 安装	riscv/toolchain.md	/^### 编译 & 安装$/;"	S
 编译执行	riscv/toolchain.md	/^### 编译执行$/;"	S
